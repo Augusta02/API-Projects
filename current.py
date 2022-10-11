@@ -16,7 +16,7 @@ user_input= str(input("Enter city: "))
 
 
 
-url = base_url + "key=" + api_key + "&q=" + user_input
+url = f'{base_url}key={api_key}&q={user_input}'
 response = requests.get(url)
 
 res = response.json()
