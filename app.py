@@ -4,17 +4,22 @@ import requests
 
 
 app= Flask(__name__)
-
-api_key = os.environ.get("API_KEY")
-base_url= "https://api.weatherapi.com/v1/current.json?"
-city = str(input("Enter city: "))
-url = f'{base_url}key={api_key}&q{city}'
+app.config['DEBUG'] = True
 
 
-@app.route('/')  # type: ignore
+@app.route('/', methods=['GET'])  # type: ignore
 def index():
-    url = f'{base_url}key={api_key}&q{city}'
-
+    api_key= os.environ.get("API_KEY")
+    base_url= "http://api.weatherstack.com/current"
+    # print(base_url)
+    city = "Lagos"
+    url = f'{base_url}access_key={api_key}&query={city}'
     print(url)
-    
 
+    r= requests.get(url)
+    new_res= r.json()
+    
+    temperature= new_res['current']['temperature']
+
+    return render_template('index.html')
+    
