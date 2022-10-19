@@ -11,7 +11,7 @@ app.config['DEBUG'] = True
 def index():
     api_key= os.environ.get("API_KEY")
     base_url= "http://api.weatherstack.com/current"
-    # print(base_url)
+    print(base_url)
     city = "Lagos"
     url = f'{base_url}access_key={api_key}&query={city}'
     print(url)

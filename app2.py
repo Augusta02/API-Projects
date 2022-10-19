@@ -14,7 +14,7 @@ response = requests.get(url)
 
 res= response.json()
 
-# print(res)
+print(res)
 
 temperature= res['current']['temperature']
 print(temperature)
