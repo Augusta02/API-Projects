@@ -38,3 +38,9 @@ print(f"Humidty in {user_input}: {humidity}%")
 print(f"Wind Speed in {user_input}: {windspeed}m/h")
 print(f"General Weather in {user_input}: {description}")
 
+
+
+list = [10, 11, 49, 39,49, 49,50,10]
+new_list=[]
+[new_list.append(x) for x in list if x not in new_list]
+print(new_list)

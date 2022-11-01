@@ -31,21 +31,15 @@
                             value="option1" checked/>
                             <label class="form-check-label" for="inlineRadio1">Celsius</label>
                         </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="option2" checked/>
-                            <label class="form-check-label" for="inlineRadio1">Farenheit</label>
-                        </div>
                     </div>
 
                     <div class="card shadow-0-border">
                         <div class="card-body p-4">
 
-                            <h4 class="mb-1 sfw-normal">Lagos,NIG</h4>
-                            <p class="mb-2">Current temperature: <strong>5.42°C</strong></p>
-                            <p> Feels like:  <strong>6.11°C</strong></p>
-                            <p> Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</storng></p>
+                            <h4 class="mb-1 sfw-normal">{{ weather.city }}</h4>
+                            <p class="mb-2">Current temperature: <strong>{{ weather.temperature }}°C</strong></p>
+                            <p> Feels like:  <strong>{{ weather.feels_temp }}</strong></p>
+                            
 
                             <div class="d-flex flex-row align-items-center">
                                 <p class="mb-0 me-4">Scattered Clouds</p>
