@@ -4,12 +4,10 @@ import requests
 
 
 app= Flask(__name__)
-if __name__ == "__main__":
-    app.run()
 
 app.config['DEBUG'] = True
 
-base_url= "https://api.weatherstack.com/current"
+base_url= "http://api.weatherstack.com/current"
 city = "Lagos"
 api_key= os.environ.get("API_KEY")
 
@@ -26,11 +24,11 @@ def index():
 
     
     weather= {
-        'city': new_res['location']['name']['country'],
+        'city': new_res['location']['name'],
         'temperature': new_res['current']['temperature'],
         'feels_temp' : new_res['current']['feelslike'],
-        'description': new_res['current']['weather_descriptions'],
-        'cloud': new_res['current']['cloudcover'],
+        'description': new_res['current']['weather_descriptions'][0],
+        'icon': new_res['current']['weather_icons'],
     }
     print(weather)
     return render_template('index.html', weather=weather)

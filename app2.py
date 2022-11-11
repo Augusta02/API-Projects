@@ -18,4 +18,6 @@ res= response.json()
 print(res)
 
 temperature= res['current']['temperature']
+res_city = res['location']['name']
+print(res_city)
 print(temperature)
